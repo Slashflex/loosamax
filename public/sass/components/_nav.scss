@@ -1,0 +1,15 @@
+.navbar {
+  background-color: #1c2331;
+
+  &-brand {
+    font-size: 2rem;
+    font-family: 'Monserrat', sans-serif;
+    font-weight: 700;
+  }
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: 'Monserrat', sans-serif;
+}

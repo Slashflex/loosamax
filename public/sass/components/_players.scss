@@ -1,0 +1,130 @@
+.vilain,
+.hero {
+  width: 30%;
+
+  @include respond(phone) {
+    width: 50%;
+  }
+
+  &-name,
+  &-name {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+  }
+
+  &-pic,
+  &-pic {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 30%;
+  }
+}
+
+.player {
+  padding-top: 6rem;
+  display: flex;
+  justify-content: space-evenly;
+
+  &-1-cards {
+    position: relative;
+  }
+
+  &-2-cards {
+    position: relative;
+  }
+
+  &-1-cards,
+  &-2-cards {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-between;
+
+    & .test {
+      margin: 0 auto;
+      width: 17%;
+      border: 0.1rem solid rgba(95, 95, 95, 0.1);
+      background-color: rgb(247, 247, 247);
+      border-radius: 0.4rem;
+      padding: 0.2rem;
+      transition: all 0.5s;
+
+      @include respond(phone) {
+        border-radius: 0.4rem;
+        width: 30%;
+      }
+
+      &:hover {
+        transform: translateY(-0.3rem) scale(1.2) rotate(4deg);
+        box-shadow: -1rem 9px 3rem -12px black;
+      }
+    }
+  }
+}
+
+.player1-card-1 {
+  position: absolute;
+  left: 35%;
+  top: 0;
+  transform: rotate(-6deg);
+  margin: 0 2rem;
+  transition: all 0.5s;
+
+  @include respond(phone) {
+    left: 20%;
+  }
+
+  &:hover {
+    box-shadow: -1rem 0 3rem #000;
+    transform: translateY(-2.5rem) scale(1.2) rotate(4deg);
+    transition: all 0.5s;
+
+    & ~ .player1-card-2 {
+      transform: translateX(3.5rem);
+    }
+  }
+}
+.player1-card-2 {
+  position: absolute;
+  left: 45%;
+  top: 0;
+  transform: rotate(6deg);
+  transition: all 0.5s;
+}
+
+.player2-card-1 {
+  position: absolute;
+  left: 35%;
+  top: 0;
+  transform: rotate(-6deg);
+  margin: 0 2rem;
+  transition: all 0.5s;
+
+  @include respond(phone) {
+    left: 30%;
+  }
+
+  &:hover, &:focus, &:active {
+    box-shadow: -1rem 0 3rem #000;
+    transform: translateY(-2.5rem) scale(1.2) rotate(4deg);
+    transition: all 0.5s;
+
+    & ~ .player2-card-2 {
+      transform: translateX(3.5rem);
+    }
+  }
+}
+.player2-card-2 {
+  position: absolute;
+  left: 45%;
+  top: 0;
+  transform: rotate(6deg);
+  transition: all 0.5s;
+
+  @include respond(phone) {
+    left: 55%;
+  }
+}

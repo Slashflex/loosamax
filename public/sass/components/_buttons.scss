@@ -1,0 +1,34 @@
+.btn-wrapper {
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.button {
+  border-radius: 10px;
+  border: none;
+  padding: 0.8rem 2rem;
+  color: #222;
+  border-radius: 0.7rem;
+  transition: all 0.2s;
+  margin: 0.5rem;
+  font-weight: 700;
+  // border-bottom: 0px solid transparent;
+@include shadow-inset;
+
+  // background: #82ca9d;
+  background: #e9e9e9;
+  &:active {
+    transform: scaleX(0.9) translateY(0.4rem);
+  }
+
+  &:not(:active) {
+  @include shadow;
+
+    // border-bottom: 0.4rem solid #62aa7d;
+  }
+}

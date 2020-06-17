@@ -1,0 +1,94 @@
+extends base
+
+block content
+
+	main.main
+		#play.player
+			.hero
+				.hero-name Hero
+				.hero-img
+					img.hero-pic.img-fluid(src='images/64.jpg' alt='')
+				.hero-hand
+					.player-1-cards
+						img.player1-card-1.test.img-fluid(src='images/cards/8_of_spades.png' alt='')
+						img.player1-card-2.test.img-fluid(src='images/cards/2_of_clubs.png' alt='')
+			.vilain
+				.vilain-name
+					p
+						| Vilain
+				img.vilain-pic.img-fluid(src='images/74.jpg' alt='')
+				.vilain-hand
+					.player-2-cards
+						img.player2-card-1.test.img-fluid(src='images/cards/4_of_diamonds.png' alt='')
+						img.player2-card-2.test.img-fluid(src='images/cards/queen_of_hearts.png' alt='')
+		.btn-wrapper
+			button.button PLAY
+			span
+		.game-card-grid
+			article.game-card-0.game-card
+				.card-container
+					.cards
+						.front
+							img.game-card-img.img-fluid(src='images/back.png' alt='')
+						.back
+							img#card0.game-card-img.img-fluid(src='images/cards/2_of_hearts.png' alt='')
+			article.game-card-1.game-card
+				.card-container
+					.cards
+						.front
+							img.game-card-img.img-fluid(src='images/back.png' alt='')
+						.back
+							img#card1.game-card-img.img-fluid(src='images/cards/2_of_hearts.png' alt='')
+			article.game-card-2.game-card
+				.card-container
+					.cards
+						.front
+							img.game-card-img.img-fluid(src='images/back.png' alt='')
+						.back
+							img#card2.game-card-img.img-fluid(src='images/cards/2_of_hearts.png' alt='')
+			article.game-card-3.game-card
+				.card-container
+					.cards
+						.front
+							img.game-card-img.img-fluid(src='images/back.png' alt='')
+						.back
+							img#card3.game-card-img.img-fluid(src='images/cards/2_of_hearts.png' alt='')
+			article.game-card-4.game-card
+				.card-container
+					.cards
+						.front
+							img.game-card-img.img-fluid(src='images/back.png' alt='')
+						.back
+							img#card4.game-card-img.img-fluid(src='images/cards/2_of_hearts.png' alt='')
+		section#engagements.engagements.pt-5
+			h2.heading-secondary Le jeu qui vous ressemble
+			.container
+				.row
+					.col-md-6
+						#carouselExampleFade.carousel.slide.carousel-fade(data-ride='carousel')
+							.carousel-inner
+								.carousel-item.active
+									img.d-block.w-100(src='images/slide1.jpg' alt='First slide')
+								.carousel-item
+									img.d-block.w-100(src='images/slide2.jpg' alt='Second slide')
+								.carousel-item
+									img.d-block.w-100(src='images/slide3.jpg' alt='Third slide')
+					.col-md-2.px-4.mb-4
+						.view
+							i.fas.fa-laugh-beam.icons
+							p(style='color: white; text-align: justify')
+								| Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quod distinctio sed debitis aperiam natus necessitatibus doloremque dolor dolorum veniam, Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ullam tempore a aut maxime adipisci illo dolorem? Laudantium consequatur suscipit a optio, facilis maiores esse..
+							hr.border-link
+					.col-md-2.px-4.mb-4
+						.view
+							i.fas.fa-user-lock.icons
+							p(style='color: white; text-align: justify')
+								| Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quod distinctio sed debitis aperiam natus necessitatibus doloremque dolor dolorum veniam, Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ullam tempore a aut maxime adipisci illo dolorem? Laudantium consequatur suscipit a optio, facilis maiores esse..
+							hr.border-link
+					.col-md-2.px-4.mb-4
+						.view
+							i.fas.fa-gamepad.icons
+							p(style='color: white; text-align: justify')
+								| Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quod distinctio sed debitis aperiam natus necessitatibus doloremque dolor dolorum veniam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ullam tempore a aut maxime adipisci illo dolorem? Laudantium consequatur suscipit a optio, facilis maiores esse.
+							hr.border-link
+		section#partners.partners

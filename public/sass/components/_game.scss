@@ -1,0 +1,128 @@
+.game-card {
+  width: 40%;
+  position: relative;
+  background: rgb(238, 238, 238);
+  border-radius: 1.6rem;
+//   transition: 0.2s;
+  display: flex;
+  transition: all 0.5s;
+
+  &:not(:first-child) {
+    margin-left: -5rem;
+  }
+
+  &:hover {
+    box-shadow: -1rem 0 3rem #000;
+    transform: translateY(-2.5rem) scale(1.2) rotate(4deg);
+
+    & ~ .game-card {
+      transform: translateX(2rem);
+    }
+  }
+
+  &-grid {
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+
+    width: 45%;
+    margin: 8rem auto;
+
+    @include respond(phone) {
+      width: 83%;
+    }
+  }
+
+  &-img {
+    padding: 0.5rem;
+    border: 0.1rem solid rgba(95, 95, 95, 0.1);
+    border-radius: 0.8rem;
+    background: rgb(238, 238, 238);
+
+    &:hover {
+      box-shadow: -1.3rem 1.3rem 3rem -1rem rgb(0, 0, 0);
+    }
+  }
+
+  &-0 {
+    transform: rotate(-10deg) translateY(0.8rem);
+  }
+  &-1 {
+    transform: rotate(-5deg);
+  }
+  &-2 {
+    transform: rotate(0deg);
+  }
+  &-3 {
+    transform: rotate(5deg);
+  }
+  &-4 {
+    transform: rotate(10deg) translateY(0.8rem);
+  }
+}
+
+.card-container {
+  margin: 0 auto;
+  width: 15rem;
+  height: 100%;
+  perspective: 100rem;
+  transform-style: preserve-3d;
+
+  & .flip {
+
+    &:focus .front,
+    &:active .front {
+      transform: rotateY(180deg);
+    }
+
+    & .front {
+      transform: rotateY(180deg);
+    }
+
+    & .back {
+      transform: rotateY(0deg);
+    }
+  }
+}
+
+.cards {
+  position: relative;
+  height: 100%;
+  transition: 0.6s;
+  transform-style: preserve-3d;
+
+  & .front,
+  & .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    backface-visibility: hidden;
+    transition: .6s;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg);
+  }
+  & .front {
+    z-index: 2;
+    transform: rotateY(0deg);
+  }
+
+  & .back {
+    transform: rotateY(-180deg);
+  }
+}
+
+#back {
+  width: 100%;
+  border-radius: 0.8rem;
+  background-color: tan;
+}
+
+.card-container.flip .front {
+  transform: rotateY(180deg);
+}
+.card-container.flip .back {
+  transform: rotateY(0deg);
+}

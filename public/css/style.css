@@ -1,0 +1,235 @@
+.main {
+  height: 100vh;
+}
+/* .player {
+  padding-top: 5rem;
+  display: flex;
+  justify-content: space-evenly;
+} */
+/* .btn-wrapper {
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+}
+.btn-wrapper:hover {
+  box-shadow: none;
+} */
+/* .hero {
+  width: 30%;
+} */
+/* .hero-name,
+.vilain-name {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+} */
+
+/* .hero-pic,
+.vilain-pic {
+  display: block;
+  margin: 0 auto;
+  border-radius: 50%;
+  width: 30%;
+} */
+
+/* .vilain {
+  width: 30%;
+
+  @include respond(phone) {
+    width: 50%;
+  }
+} */
+/* .game {
+  display: flex;
+  justify-content: center;
+} */
+/* .card-0,
+.card-1,
+.card-2,
+.card-3,
+.card-4 {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+} */
+/* .card-0 img,
+.card-1 img,
+.card-2 img,
+.card-3 img,
+.card-4 img {
+  width: 80%;
+  height: 40%;
+  align-items: center;
+  border: .1rem solid rgb(117, 117, 117);
+  border-radius: 1rem;
+  padding: 0.8rem;
+  transition: all 0.5s;
+} */
+/* .hero-hand,
+.vilain-hand {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+} */
+/* .hero-cards,
+.vilain-cards {
+  display: flex;
+} */
+/* .player-1-cards,
+.player-2-cards {
+  margin: 2rem auto;
+  display: flex;
+} */
+/* .player-1-cards img,
+.player-2-cards img {
+  margin: 0 auto;
+  width: 30%;
+  border: .1rem solid rgb(117, 117, 117);
+  background-color: rgb(247, 247, 247);
+  border-radius: 1rem;
+  padding: 0.2rem;
+  transition: all 0.5s;
+} */
+/* .player-1-cards img:hover,
+.player-2-cards img:hover,
+.card-0 img:hover,
+.card-1 img:hover,
+.card-2 img:hover,
+.card-3 img:hover,
+.card-4 img:hover {
+  transform: translateY(-0.3rem) scale(1.2) rotate(4deg);
+  box-shadow: -.1rem .7rem 3.5rem .3rem rgba(194, 188, 194, 1);
+} */
+
+/* .game-card-grid {
+  /* padding: 3rem;
+  display: flex;
+  justify-content: center; 
+} */
+/* .game-card {
+  width: 40%;
+  position: relative;
+  background: rgb(238, 238, 238);
+  border-radius: 1.6rem;
+  transition: .2s;
+  display: flex;
+  transition: all .5s;
+} */
+/* .game-card:hover {
+  box-shadow: -1rem 0 3rem #000;
+  transform: translate(0,-3rem);
+} */
+/* .game-card-img {
+  padding: .5rem;
+  border: .1rem solid rgba(95, 95, 95, .1);
+  border-radius: .8rem;
+  background: rgb(238, 238, 238);
+} */
+/* .game-card-img:hover {
+  box-shadow: -1.3rem 1.3rem 3rem -1rem rgb(0, 0, 0);
+} */
+/* .game-card:not(:first-child) {
+  margin-left: -5rem;
+} */
+
+/* .game-card:hover ~ .game-card {
+  transform: translateX(2rem);
+} */
+/* .game-card-0 {
+  transform: rotate(-10deg) translateY(.8rem);
+}
+.game-card-1 {
+  transform: rotate(-5deg);
+}
+.game-card-2 {
+  transform: rotate(0deg);
+}
+.game-card-3 {
+  transform: rotate(5deg);
+}
+.game-card-4 {
+  transform: rotate(10deg) translateY(.8rem);
+} */
+
+/* .card-container {
+  margin: 0 auto;
+  width: 15rem;
+  height: 100%;
+  perspective: 100rem;
+  transform-style: preserve-3d;
+} */
+
+/* .cards {
+  position: relative;
+  height: 100%;
+  transition: .6s;
+  transform-style: preserve-3d;
+} */
+
+/* flip class added with javascript on document load */
+/* .card-container.flip .front {
+  transform: rotateY(180deg);
+}
+.card-container.flip .back {
+  transform: rotateY(0deg);
+} */
+
+/* .cards .front,
+.cards .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 1rem;
+  backface-visibility: hidden;
+  transition: 2s;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+} */
+
+/* .cards .front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.cards .back {
+  transform: rotateY(-180deg);
+} */
+/* #back {
+  width: 100%;
+  border-radius: .8rem;
+  background-color: tan;
+} */
+
+/* .button {
+  border-radius: 10px;
+  border: none;
+  padding: .8rem 2rem;
+  color: #222;
+  border-radius: .7rem;
+  transition: all 0.2s;
+  margin: .5rem;
+  border-bottom: 0px solid #eee;
+}
+
+.button:active {
+  transform: scaleX(0.9) translateY(.4rem);
+}
+
+.button {
+  background: #82CA9D;
+}
+.button:not(:active) {
+  border-bottom: .4rem solid #62AA7D;
+} */
+
+/* .navbar {
+  background-color: #222;
+} */
+.engagements {
+  min-height: 50vh;
+  margin-top: 26rem;
+  background-color: #393939;
+}

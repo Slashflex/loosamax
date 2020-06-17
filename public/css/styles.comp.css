@@ -1,0 +1,353 @@
+/*
+  0 - 600px:         Phone
+  600 - 900px:       Tablet Portrait
+  900 - 1200px:      Tablet Landscape
+  [1200 - 1800px]:   Is where our normal styles apply
+  1800px + :         Big Desktop
+  */
+/*
+  $breakpoint argument choixes:
+  - phone
+  - tab-port
+  - tab-land
+  - big-desktop
+  
+  ORDER : Base + typography > general layout + grid > page layout > components
+  
+  1em = 16px
+  */
+.border-link {
+  background-color: #51ce62; }
+
+.h6 {
+  font-size: 1.4rem; }
+
+.fab {
+  font-size: 2rem; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none; }
+
+body {
+  overflow-x: hidden; }
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-size: 62.5%; }
+  @media only screen and (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media only screen and (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media only screen and (mmin-width: 112.5em) {
+    html {
+      font-size: 75%; } }
+
+.main {
+  min-height: 200vh; }
+
+.raw {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .raw:not(:last-child) {
+    margin-bottom: 8rem; }
+    @media only screen and (max-width: 56.25em) {
+      .raw:not(:last-child) {
+        margin-bottom: 6rem; } }
+  @media only screen and (max-width: 56.25em) {
+    .raw {
+      max-width: 50rem;
+      padding: 0 3rem; } }
+  .raw::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .raw [class^="col-"] {
+    float: left; }
+    .raw [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+      @media only screen and (max-width: 56.25em) {
+        .raw [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 6rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .raw [class^="col-"] {
+        width: 100% !important; } }
+  .raw .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .raw .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .raw .col-2-of-3 {
+    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .raw .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .raw .col-2-of-4 {
+    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .raw .col-3-of-4 {
+    width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
+
+.vilain,
+.hero {
+  width: 30%; }
+  @media only screen and (max-width: 37.5em) {
+    .vilain,
+    .hero {
+      width: 50%; } }
+  .vilain-name, .vilain-name,
+  .hero-name,
+  .hero-name {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem; }
+  .vilain-pic, .vilain-pic,
+  .hero-pic,
+  .hero-pic {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 30%; }
+
+.player {
+  padding-top: 6rem;
+  display: flex;
+  justify-content: space-evenly; }
+  .player-1-cards {
+    position: relative; }
+  .player-2-cards {
+    position: relative; }
+  .player-1-cards, .player-2-cards {
+    margin: 2rem auto;
+    display: flex;
+    justify-content: space-between; }
+    .player-1-cards .test, .player-2-cards .test {
+      margin: 0 auto;
+      width: 17%;
+      border: 0.1rem solid rgba(95, 95, 95, 0.1);
+      background-color: #f7f7f7;
+      border-radius: 0.4rem;
+      padding: 0.2rem;
+      transition: all 0.5s; }
+      @media only screen and (max-width: 37.5em) {
+        .player-1-cards .test, .player-2-cards .test {
+          border-radius: 0.4rem;
+          width: 30%; } }
+      .player-1-cards .test:hover, .player-2-cards .test:hover {
+        transform: translateY(-0.3rem) scale(1.2) rotate(4deg);
+        box-shadow: -1rem 9px 3rem -12px black; }
+
+.player1-card-1 {
+  position: absolute;
+  left: 35%;
+  top: 0;
+  transform: rotate(-6deg);
+  margin: 0 2rem;
+  transition: all 0.5s; }
+  @media only screen and (max-width: 37.5em) {
+    .player1-card-1 {
+      left: 20%; } }
+  .player1-card-1:hover {
+    box-shadow: -1rem 0 3rem #000;
+    transform: translateY(-2.5rem) scale(1.2) rotate(4deg);
+    transition: all 0.5s; }
+    .player1-card-1:hover ~ .player1-card-2 {
+      transform: translateX(3.5rem); }
+
+.player1-card-2 {
+  position: absolute;
+  left: 45%;
+  top: 0;
+  transform: rotate(6deg);
+  transition: all 0.5s; }
+
+.player2-card-1 {
+  position: absolute;
+  left: 35%;
+  top: 0;
+  transform: rotate(-6deg);
+  margin: 0 2rem;
+  transition: all 0.5s; }
+  @media only screen and (max-width: 37.5em) {
+    .player2-card-1 {
+      left: 30%; } }
+  .player2-card-1:hover, .player2-card-1:focus, .player2-card-1:active {
+    box-shadow: -1rem 0 3rem #000;
+    transform: translateY(-2.5rem) scale(1.2) rotate(4deg);
+    transition: all 0.5s; }
+    .player2-card-1:hover ~ .player2-card-2, .player2-card-1:focus ~ .player2-card-2, .player2-card-1:active ~ .player2-card-2 {
+      transform: translateX(3.5rem); }
+
+.player2-card-2 {
+  position: absolute;
+  left: 45%;
+  top: 0;
+  transform: rotate(6deg);
+  transition: all 0.5s; }
+  @media only screen and (max-width: 37.5em) {
+    .player2-card-2 {
+      left: 55%; } }
+
+.navbar {
+  background-color: #1c2331; }
+  .navbar-brand {
+    font-size: 2rem;
+    font-family: 'Monserrat', sans-serif;
+    font-weight: 700; }
+
+.nav-link {
+  font-size: 1.2rem;
+  font-weight: 400;
+  font-family: 'Monserrat', sans-serif; }
+
+.btn-wrapper {
+  box-shadow: none;
+  display: flex;
+  justify-content: center; }
+  .btn-wrapper:hover {
+    box-shadow: none; }
+
+.button {
+  border-radius: 10px;
+  border: none;
+  padding: 0.8rem 2rem;
+  color: #222;
+  border-radius: 0.7rem;
+  transition: all 0.2s;
+  margin: 0.5rem;
+  font-weight: 700;
+  box-shadow: inset -6px -6px 9px #fff, inset 6px 6px 9px rgba(0, 0, 0, 0.4);
+  background: #e9e9e9; }
+  .button:active {
+    transform: scaleX(0.9) translateY(0.4rem); }
+  .button:not(:active) {
+    box-shadow: -6px -6px 9px #fff, 6px 6px 9px rgba(0, 0, 0, 0.4); }
+
+.game-card {
+  width: 40%;
+  position: relative;
+  background: #eeeeee;
+  border-radius: 1.6rem;
+  display: flex;
+  transition: all 0.5s; }
+  .game-card:not(:first-child) {
+    margin-left: -5rem; }
+  .game-card:hover {
+    box-shadow: -1rem 0 3rem #000;
+    transform: translateY(-2.5rem) scale(1.2) rotate(4deg); }
+    .game-card:hover ~ .game-card {
+      transform: translateX(2rem); }
+  .game-card-grid {
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    width: 45%;
+    margin: 8rem auto; }
+    @media only screen and (max-width: 37.5em) {
+      .game-card-grid {
+        width: 83%; } }
+  .game-card-img {
+    padding: 0.5rem;
+    border: 0.1rem solid rgba(95, 95, 95, 0.1);
+    border-radius: 0.8rem;
+    background: #eeeeee; }
+    .game-card-img:hover {
+      box-shadow: -1.3rem 1.3rem 3rem -1rem black; }
+  .game-card-0 {
+    transform: rotate(-10deg) translateY(0.8rem); }
+  .game-card-1 {
+    transform: rotate(-5deg); }
+  .game-card-2 {
+    transform: rotate(0deg); }
+  .game-card-3 {
+    transform: rotate(5deg); }
+  .game-card-4 {
+    transform: rotate(10deg) translateY(0.8rem); }
+
+.card-container {
+  margin: 0 auto;
+  width: 15rem;
+  height: 100%;
+  perspective: 100rem;
+  transform-style: preserve-3d; }
+  .card-container .flip:focus .front,
+  .card-container .flip:active .front {
+    transform: rotateY(180deg); }
+  .card-container .flip .front {
+    transform: rotateY(180deg); }
+  .card-container .flip .back {
+    transform: rotateY(0deg); }
+
+.cards {
+  position: relative;
+  height: 100%;
+  transition: 0.6s;
+  transform-style: preserve-3d; }
+  .cards .front,
+  .cards .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    backface-visibility: hidden;
+    transition: .6s;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg); }
+  .cards .front {
+    z-index: 2;
+    transform: rotateY(0deg); }
+  .cards .back {
+    transform: rotateY(-180deg); }
+
+#back {
+  width: 100%;
+  border-radius: 0.8rem;
+  background-color: tan; }
+
+.card-container.flip .front {
+  transform: rotateY(180deg); }
+
+.card-container.flip .back {
+  transform: rotateY(0deg); }
+
+.engagements {
+  margin-top: 30rem;
+  background-color: #1c2331;
+  padding: 6rem; }
+
+.heading-secondary {
+  text-align: center;
+  font-size: 2.5rem;
+  color: transparent;
+  background-image: -webkit-gradient(linear, left top, right top, from(#7ed56f), to(#28b485));
+  background-image: linear-gradient(to right, #7ed56f, #28b485);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-weight: 600;
+  font-family: Montserrat, sans-serif;
+  transform: translateY(-3.5rem);
+  margin-top: 6rem; }
+
+.far {
+  font-size: 4rem;
+  color: white; }
+
+.icons {
+  color: #7ed56f;
+  font-size: 4.5rem;
+  width: 100%;
+  text-align: center;
+  padding: 1.5rem 0; }
+
+.view {
+  margin-top: 3rem; }
+  @media only screen and (max-width: 37.5em) {
+    .view {
+      margin-top: 2rem; } }
