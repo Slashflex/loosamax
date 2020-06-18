@@ -12,7 +12,6 @@
  */
 import { CARDS, CARDS_TYPE } from "./utils.js";
 
-
 // Check for value occurence
 const occurencesValue = cards => {
   let occ = {};
@@ -38,7 +37,6 @@ const occurencesValue = cards => {
         }
       });
     });
-
   return occ;
 };
 

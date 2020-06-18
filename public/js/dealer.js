@@ -1,12 +1,3 @@
-// import {
-//   DECK_52,
-//   VALUES_NAME,
-//   TYPES_NAME,
-//   imagesClass,
-//   shuffle
-// } from './utils.js';
-// import { bestCombo } from './bestCombo.js';
-// import { compareCombos } from './compareCombos.js';
 import {
   DECK_52,
   VALUES_NAME,
@@ -25,11 +16,6 @@ const getCardName = card => {
     '_of_'
   )}.png`;
 }
-
-// const heroName = document.querySelector('.hero-name');
-// const vilainName = document.querySelector('.vilain-name');
-
-// heroName.innertText = 'Hero';
 
 // Draws 9 card to the game, 2 for each players + 5 for the flop
 const dealer = () => {
