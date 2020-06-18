@@ -1,7 +1,7 @@
 // Head
 include partials/_head
 
-  body
+  body(data-alert=`${alert ? alert : ''}`)
     include partials/_navigation
 
     block content

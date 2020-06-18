@@ -1,3 +1,12 @@
+// import {
+//   DECK_52,
+//   VALUES_NAME,
+//   TYPES_NAME,
+//   imagesClass,
+//   shuffle
+// } from './utils.js';
+// import { bestCombo } from './bestCombo.js';
+// import { compareCombos } from './compareCombos.js';
 import {
   DECK_52,
   VALUES_NAME,
@@ -6,8 +15,7 @@ import {
   shuffle
 } from './utils.js';
 import { bestCombo } from './bestCombo.js';
-import { orderCards } from './orderCards.js';
-import { compareCombos, scoreCards } from './compareCombos.js';
+import { compareCombos } from './compareCombos.js';
 
 // Get the file name of a card: 'Ac' => return 'ace_of_clubs.png'
 const getCardName = card => {

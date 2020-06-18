@@ -1,5 +1,5 @@
 // Navbar
-nav.mb-1.navbar.navbar-expand-lg.navbar-dark.fixed-top
+nav.navigation.mb-1.navbar.navbar-expand-lg.navbar-dark.fixed-top
   a.navbar-brand(href='/') Loosamax
   button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent-4' aria-controls='navbarSupportedContent-4' aria-expanded='false' aria-label='Toggle navigation')
     span.navbar-toggler-icon
@@ -14,4 +14,18 @@ nav.mb-1.navbar.navbar-expand-lg.navbar-dark.fixed-top
       li.nav-item
         a.nav-link(href='#partners')
           | Partenaires
+      li.nav-item.avatar.dropdown
+        a#navbarDropdownMenuLink-55.nav-link.dropdown-toggle(style="width: 20%; float: right" data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+          if user
+            img.rounded-circle.z-depth-0(style="width: 30%" src=`images/users/${user.photo}` alt=`${user.name}`)
+          else
+            img.rounded-circle.z-depth-0(style="width: 30%" src='images/users/default.jpg' alt='default user photo')
+        .dropdown-menu.dropdown-menu-lg-right.dropdown-secondary(aria-labelledby='navbarDropdownMenuLink-55')
+          if user
+            a.dropdown-item(href='/profile') Profile
+            a.dropdown-item.logout Logout
+          else 
+            a.dropdown-item(href='/login') Login
+            a.dropdown-item(href='/signup') Signup
+            
 // /.Navbar
