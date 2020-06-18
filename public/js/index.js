@@ -1,35 +1,39 @@
 /* eslint-disable */
-import '@babel/polyfill';
+// import '@babel/polyfill';
 import { dealer } from './dealer.js';
-import { login, logout, signup, passwordForgot, passwordReset } from './login';
-import { updateSettings } from './updateSettings';
-import { showAlert } from './alerts';
+import { login, logout, signup, passwordForgot, passwordReset } from './login.js';
+import { updateSettings } from './updateSettings.js';
+import { showAlert } from './alerts.js';
 
 // const heroName = document.querySelector('.hero-name');
 // const vilainName = document.querySelector('.vilain-name');
 
 // On page Load
 window.addEventListener('load', () => {
-  const play = document.querySelector('.button');
+  const play = document.querySelector('.buttonPlay');
   const playerImg = document.querySelectorAll('.test');
-  playerImg.forEach((e) => {
-    e.src = 'images/back.png';
-  });
-  // heroName.src = 'images/64.jpg';
-  // vilainName.src = 'images/74.jpg';
-  // On click on play
-  play.addEventListener('click', (e) => {
-    e.preventDefault();
-    const wrappers = document.querySelectorAll('.card-container');
-    // const playerCards = document.querySelector('.player-2-cards');
-    // playerImg.forEach(e => {
-    //   e.style.transform = 'rotateX(360deg)';
-    //   // e.style.transition = 'all 1.5s';
-    // });
-    wrappers.forEach((e) => e.classList.add('flip')); // Adds flip card for each card container
+  
+  if (window.location.pathname == '/') {
+    playerImg.forEach((e) => {
+      e.src = 'images/back.png';
+    });
+    // heroName.src = 'images/64.jpg';
+    // vilainName.src = 'images/74.jpg';
+    // On click on play
 
-    dealer();
-  });
+    play.addEventListener('click', (e) => {
+      e.preventDefault();
+      const wrappers = document.querySelectorAll('.card-container');
+      // const playerCards = document.querySelector('.player-2-cards');
+      // playerImg.forEach(e => {
+      //   e.style.transform = 'rotateX(360deg)';
+      //   // e.style.transition = 'all 1.5s';
+      // });
+      wrappers.forEach((e) => e.classList.add('flip')); // Adds flip card for each card container
+
+      dealer();
+    });
+  }
 });
 
 // DOM ELEMENTS

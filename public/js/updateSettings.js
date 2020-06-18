@@ -1,6 +1,6 @@
 /* eslint-disable */
 import axios from 'axios';
-import { showAlert } from './alerts';
+import { showAlert } from './alerts.js';
 
 // type is either 'password' or 'data'
 export const updateSettings = async (data, type) => {
@@ -16,6 +16,9 @@ export const updateSettings = async (data, type) => {
 
     if (res.data.status === 'success') {
       showAlert('success', `${type} updated successfully!`);
+      // window.setTimeout(() => {
+        location.assign('/profile');
+      // }, 100);
     } 
   } catch (err) {
       showAlert('error', err.response.data.message);
