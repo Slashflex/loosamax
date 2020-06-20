@@ -5,21 +5,32 @@
 
 .heading-secondary {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: $color-secondary;
-  // background-image: -webkit-gradient(linear, left top, right top, from(#7ed56f), to(#28b485));
-  // background-image: linear-gradient(to right, #7ed56f, #28b485);
-  // -webkit-background-clip: text;
-  // background-clip: text;
   font-weight: 600;
   font-family: Montserrat, sans-serif;
-  transform: translateY(-3.5rem);
-  margin-top: 6rem;
+  margin-top: 1.5rem;
+  margin-bottom: 4rem;
+  @include shadow-icon;
+
+  &-partners {
+    margin-top: 3rem;
+    margin-bottom: 3.5rem;
+    text-align: center;
+    font-size: 2.8rem;
+    color: $color-secondary;
+    font-weight: 600;
+    font-family: Montserrat, sans-serif;
+  }
 }
 
 .far {
   font-size: 4rem;
   color: white;
+}
+
+.fas {
+  @include shadow-icon;
 }
 
 .icons {
@@ -30,9 +41,18 @@
   padding: 1.5rem 0;
 }
 .view {
-    margin-top: 3rem;
+  margin-top: 3rem;
 
-    @include respond(phone) {
-        margin-top: 2rem;
-    }
+  @include respond(phone) {
+    margin-top: 2rem;
+  }
+}
+
+.carousel {
+  box-shadow: -7px 4px 22px $color-black;
+}
+
+.partners {
+  min-height: 30vh;
+  margin-bottom: 4rem;
 }

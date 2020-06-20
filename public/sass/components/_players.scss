@@ -45,7 +45,7 @@
 
     & .test {
       margin: 0 auto;
-      width: 17%;
+      width: 23%;
       border: 0.1rem solid rgba(95, 95, 95, 0.1);
       background-color: rgb(247, 247, 247);
       border-radius: 0.4rem;
@@ -83,7 +83,7 @@
     transition: all 0.5s;
 
     & ~ .player1-card-2 {
-      transform: translateX(3.5rem);
+      transform: translateX(3.8rem);
     }
   }
 }
@@ -113,7 +113,7 @@
     transition: all 0.5s;
 
     & ~ .player2-card-2 {
-      transform: translateX(3.5rem);
+      transform: translateX(3.8rem);
     }
   }
 }

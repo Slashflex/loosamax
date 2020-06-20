@@ -168,7 +168,7 @@ html {
     justify-content: space-between; }
     .player-1-cards .test, .player-2-cards .test {
       margin: 0 auto;
-      width: 17%;
+      width: 23%;
       border: 0.1rem solid rgba(95, 95, 95, 0.1);
       background-color: #f7f7f7;
       border-radius: 0.4rem;
@@ -197,7 +197,7 @@ html {
     transform: translateY(-2.5rem) scale(1.2) rotate(4deg);
     transition: all 0.5s; }
     .player1-card-1:hover ~ .player1-card-2 {
-      transform: translateX(3.5rem); }
+      transform: translateX(3.8rem); }
 
 .player1-card-2 {
   position: absolute;
@@ -221,7 +221,7 @@ html {
     transform: translateY(-2.5rem) scale(1.2) rotate(4deg);
     transition: all 0.5s; }
     .player2-card-1:hover ~ .player2-card-2, .player2-card-1:focus ~ .player2-card-2, .player2-card-1:active ~ .player2-card-2 {
-      transform: translateX(3.5rem); }
+      transform: translateX(3.8rem); }
 
 .player2-card-2 {
   position: absolute;
@@ -339,6 +339,10 @@ html {
   -ms-flex-align: center;
   align-items: center;
   font-size: 1.6rem; }
+  @media only screen and (max-width: 37.5em) {
+    .form__photo-upload {
+      display: flex;
+      justify-content: center; } }
 
 .form__user-photo {
   height: 7.5rem;
@@ -395,8 +399,40 @@ html {
   .passwordForgot:hover {
     color: #393939; }
 
+.reward-form {
+  margin: -5rem auto;
+  max-width: 55rem;
+  padding: 5rem 7rem;
+  border-radius: 5px;
+  display: none; }
+
+.error {
+  max-width: 80rem;
+  text-align: center;
+  margin: 26.25rem auto; }
+  @media only screen and (max-width: 75em) {
+    .error {
+      margin: 32rem auto; } }
+  @media only screen and (max-width: 56.25em) {
+    .error {
+      margin: 36.7rem auto; } }
+  .error__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem; }
+  .error__emoji {
+    font-size: 3.75rem;
+    margin-left: 1rem; }
+  .error__msg {
+    font-size: 2.5rem;
+    font-weight: 700;
+    max-width: 50rem;
+    margin: 0 auto; }
+
 .navbar {
-  background-color: #1c2331; }
+  background-color: #1c2331;
+  padding: 1rem; }
   .navbar-brand {
     font-size: 2rem;
     font-family: 'Monserrat', sans-serif;
@@ -406,6 +442,68 @@ html {
   font-size: 1.2rem;
   font-weight: 400;
   font-family: 'Monserrat', sans-serif; }
+
+.animated-icon1 {
+  width: 3rem;
+  height: 2rem;
+  position: relative;
+  margin: 0px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer; }
+
+.animated-icon1 span {
+  display: block;
+  position: absolute;
+  height: .2rem;
+  width: 100%;
+  border-radius: .9rem;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out; }
+
+.animated-icon1 span {
+  background-color: #51CE62; }
+
+.animated-icon1 span:nth-child(1) {
+  top: 0px; }
+
+.animated-icon1 span:nth-child(2) {
+  top: 1rem; }
+
+.animated-icon1 span:nth-child(3) {
+  top: 2rem; }
+
+.animated-icon1.open span:nth-child(1) {
+  top: 1.1rem;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg); }
+
+.animated-icon1.open span:nth-child(2) {
+  opacity: 0;
+  left: -6rem; }
+
+.animated-icon1.open span:nth-child(3) {
+  top: 1.1rem;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg); }
 
 .btn-wrapper {
   box-shadow: none;
@@ -417,14 +515,15 @@ html {
 .button {
   border-radius: 10px;
   border: none;
-  padding: 0.8rem 2rem;
-  color: #222;
+  padding: 0.8rem 1.8rem;
+  color: #51CE62;
+  font-size: 2.2rem;
   border-radius: 0.7rem;
   transition: all 0.2s;
   margin: 0.5rem;
   font-weight: 700;
-  box-shadow: inset -6px -6px 9px #fff, inset 6px 6px 9px rgba(0, 0, 0, 0.4);
-  background: #e9e9e9; }
+  box-shadow: inset -6px -6px 9px #293141, inset 6px 6px 9px rgba(0, 0, 0, 0.4);
+  background: #1c2331; }
   .button:active {
     transform: scaleX(0.9) translateY(0.4rem); }
   .button:not(:active) {
@@ -476,7 +575,7 @@ html {
     border-radius: 0.8rem;
     background: #eeeeee; }
     .game-card-img:hover {
-      box-shadow: -1.3rem 1.3rem 3rem -1rem black; }
+      box-shadow: -1.3rem 1.3rem 3rem -1rem #000; }
   .game-card-0 {
     transform: rotate(-10deg) translateY(0.8rem); }
   .game-card-1 {
@@ -550,16 +649,28 @@ html {
 
 .heading-secondary {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   color: #51CE62;
   font-weight: 600;
   font-family: Montserrat, sans-serif;
-  transform: translateY(-3.5rem);
-  margin-top: 6rem; }
+  margin-top: 1.5rem;
+  margin-bottom: 4rem;
+  text-shadow: 0px 0px 10px #000; }
+  .heading-secondary-partners {
+    margin-top: 3rem;
+    margin-bottom: 3.5rem;
+    text-align: center;
+    font-size: 2.8rem;
+    color: #51CE62;
+    font-weight: 600;
+    font-family: Montserrat, sans-serif; }
 
 .far {
   font-size: 4rem;
   color: white; }
+
+.fas {
+  text-shadow: 0px 0px 10px #000; }
 
 .icons {
   color: #7ed56f;
@@ -574,36 +685,30 @@ html {
     .view {
       margin-top: 2rem; } }
 
+.carousel {
+  box-shadow: -7px 4px 22px #000; }
+
+.partners {
+  min-height: 30vh;
+  margin-bottom: 4rem; }
+
 .user-view {
   background-color: #fff;
   max-width: 120rem;
-  margin: 0 auto;
-  min-height: 100vh;
-  border-radius: 3px;
+  margin: 15rem auto;
+  border-radius: .5rem;
   overflow: hidden;
   box-shadow: 0 2.5rem 8rem 2rem rgba(0, 0, 0, 0.07);
   display: flex; }
   @media only screen and (max-width: 56.25em) {
     .user-view {
       display: block; } }
-  @media only screen and (max-width: 37.5em) {
-    .user-view {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0; } }
-
-.user-view__menu {
-  flex: 27rem 0 0;
-  background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
-  padding: 4rem 0; }
-  @media only screen and (max-width: 56.25em) {
-    .user-view__menu {
-      padding: 2rem 0; } }
 
 .user-view__content {
   flex: 1;
-  padding: 7rem 0; }
+  padding: 7rem 0;
+  display: flex;
+  align-items: center; }
 
 .user-view__form-container {
   max-width: 68rem;

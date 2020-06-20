@@ -5,27 +5,6 @@ import { login, logout, signup, passwordForgot, passwordReset } from './login.js
 import { updateSettings } from './updateSettings.js';
 import { showAlert } from './alerts.js';
 
-// On page Load
-window.addEventListener('load', () => {
-  const play = document.querySelector('.buttonPlay');
-  const playerImg = document.querySelectorAll('.test');
-  
-  if (window.location.pathname == '/') {
-    playerImg.forEach((e) => {
-      e.src = 'images/back.png';
-    });
-    // On click on play
-    play.addEventListener('click', (e) => {
-      e.preventDefault();
-      const wrappers = document.querySelectorAll('.card-container');
-      
-      wrappers.forEach((e) => e.classList.add('flip')); // Adds flip card for each card container
-
-      dealer();
-    });
-  }
-});
-
 // DOM ELEMENTS
 const loginForm = document.querySelector('.form--login');
 const logOutBtn = document.querySelector('.logout');
@@ -34,6 +13,48 @@ const userPasswordForm = document.querySelector('.form-user-password');
 const signupForm = document.getElementById('signup-form');
 const passwordForgotForm = document.querySelector('#passwordForgotForm');
 const passwordResetForm = document.querySelector('#passwordResetForm');
+
+// On page Load
+window.addEventListener('load', () => {
+  const play = document.querySelector('.buttonPlay');
+  const playerImg = document.querySelectorAll('.test');
+  const openNav = document.querySelector('.first-button');
+  const addOpen = document.querySelector('.animated-icon1');
+  const navLink = document.querySelectorAll('.nav-item');
+
+  openNav.addEventListener('click', (e) => {
+    addOpen.classList.toggle('open');
+  });
+
+  if (window.location.pathname == '/profile') {
+    // document.classList.remove('active');
+    navLink.siblings.
+    navLink[2].classList.add('active');
+  } else if (window.location.pathname == '/login') {
+    // document.classList.remove('active');
+    navLink[2].classList.add('active');
+  } else if (window.location.pathname == '/signup') {
+    // document.classList.remove('active');
+    navLink[3].classList.add('active');
+  } else {
+    navLink[0].classList.add('active');
+  }
+
+  if (window.location.pathname == '/') {
+    playerImg.forEach((e) => {
+      e.src = 'images/back.png';
+    });
+    // On click on play
+    play.addEventListener('click', (e) => {
+      e.preventDefault();
+      const wrappers = document.querySelectorAll('.card-container');
+
+      wrappers.forEach((e) => e.classList.add('flip')); // Adds flip card for each card container
+
+      dealer();
+    });
+  }
+});
 
 if (loginForm)
   loginForm.addEventListener('submit', (e) => {

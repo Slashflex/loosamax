@@ -2,131 +2,119 @@ extends base
 
 block content
 
-	main.main
+	main
 		if user
-			#play.player
-				.hero
-					.hero-name #{user.name}
-					.hero-img
-						img.hero-pic.img-fluid.user-photo(src=`images/users/${user.photo}` alt=`${user.name}`)
-						img.hero-pic.img-fluid.winner(src=`images/winner.png` alt=`${user.name}`)
-					.hero-hand
-						.player-1-cards
-							img.player1-card-1.test.img-fluid(src='images/cards/8_of_spades.png' alt='')
-							img.player1-card-2.test.img-fluid(src='images/cards/2_of_clubs.png' alt='')
-				.vilain
-					.vilain-name
-						p
-							| Vilain
-					img.vilain-pic.img-fluid(src='images/74.jpg' alt='')
-					.vilain-hand
-						.player-2-cards
-							img.player2-card-1.test.img-fluid(src='images/cards/4_of_diamonds.png' alt='')
-							img.player2-card-2.test.img-fluid(src='images/cards/queen_of_hearts.png' alt='')
-			.btn-wrapper
-				button.button.buttonPlay PLAY
-				span
-			.game-card-grid
-				article.game-card-0.game-card
-					.card-container
-						.cards
-							.front
-								img.game-card-img.img-fluid(src='images/back.png' alt='')
-							.back
-								img#card0.game-card-img.img-fluid(src='images/cards/2_of_hearts.png' alt='')
-				article.game-card-1.game-card
-					.card-container
-						.cards
-							.front
-								img.game-card-img.img-fluid(src='images/back.png' alt='')
-							.back
-								img#card1.game-card-img.img-fluid(src='images/cards/2_of_hearts.png' alt='')
-				article.game-card-2.game-card
-					.card-container
-						.cards
-							.front
-								img.game-card-img.img-fluid(src='images/back.png' alt='')
-							.back
-								img#card2.game-card-img.img-fluid(src='images/cards/2_of_hearts.png' alt='')
-				article.game-card-3.game-card
-					.card-container
-						.cards
-							.front
-								img.game-card-img.img-fluid(src='images/back.png' alt='')
-							.back
-								img#card3.game-card-img.img-fluid(src='images/cards/2_of_hearts.png' alt='')
-				article.game-card-4.game-card
-					.card-container
-						.cards
-							.front
-								img.game-card-img.img-fluid(src='images/back.png' alt='')
-							.back
-								img#card4.game-card-img.img-fluid(src='images/cards/2_of_hearts.png' alt='')
-		else
-			.header-image
+			section.game(style="min-height: 75rem")
+				#play.player
+					.hero
+						.hero-name #{user.name}
+						.hero-img
+							img.hero-pic.img-fluid.user-photo(src=`images/users/${user.photo}` alt=`${user.name}`)
+							img.hero-pic.img-fluid.winner(src=`images/winner.png` alt=`${user.name}`)
+						.hero-hand
+							p.text-center#heroHand
+							.player-1-cards
+								img.player1-card-1.test.img-fluid.deck(src='images/cards/8_of_spades.png' alt='')
+								img.player1-card-2.test.img-fluid.deck(src='images/cards/2_of_clubs.png' alt='')
+					.vilain
+						.vilain-name
+							p
+								| Vilain
+						img.vilain-pic.img-fluid(src='images/74.jpg' alt='')
+						.vilain-hand
+							p.text-center#vilainHand
+							.player-2-cards
+								img.player2-card-1.test.img-fluid.deck(src='images/cards/4_of_diamonds.png' alt='')
+								img.player2-card-2.test.img-fluid.deck(src='images/cards/queen_of_hearts.png' alt='')
+				.btn-wrapper
+					button.button.buttonPlay PLAY
+					span
+				
+				.reward-form
+					h2.heading-secondary-partners.mt-0.u-center-text.ma-bt-lg 🎉 #{user.name} won 🎉!!
+					form.form.form--login
+						button.button-sign-up.button-reward(style='display: block; margin: 0 auto') Claim your reward
 
-		if user
-			section#engagements.engagements.pt-5(style="margin-top: 30rem")
-				h2.heading-secondary Le jeu qui vous ressemble
-				.container
-					.row
-						.col-md-6
-							#carouselExampleFade.carousel.slide.carousel-fade(data-ride='carousel')
-								.carousel-inner
-									.carousel-item.active
-										img.d-block.w-100(src='images/slide1.jpg' alt='First slide')
-									.carousel-item
-										img.d-block.w-100(src='images/slide2.jpg' alt='Second slide')
-									.carousel-item
-										img.d-block.w-100(src='images/slide3.jpg' alt='Third slide')
-						.col-md-2.px-4.mb-4
-							.view
-								i.fas.fa-laugh-beam.icons
-								p(style='color: white; text-align: justify')
-									| Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quod distinctio sed debitis aperiam natus necessitatibus doloremque dolor dolorum veniam, Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ullam tempore a aut maxime adipisci illo dolorem? Laudantium consequatur suscipit a optio, facilis maiores esse..
-								hr.border-link
-						.col-md-2.px-4.mb-4
-							.view
-								i.fas.fa-user-lock.icons
-								p(style='color: white; text-align: justify')
-									| Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quod distinctio sed debitis aperiam natus necessitatibus doloremque dolor dolorum veniam, Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ullam tempore a aut maxime adipisci illo dolorem? Laudantium consequatur suscipit a optio, facilis maiores esse..
-								hr.border-link
-						.col-md-2.px-4.mb-4
-							.view
-								i.fas.fa-gamepad.icons
-								p(style='color: white; text-align: justify')
-									| Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quod distinctio sed debitis aperiam natus necessitatibus doloremque dolor dolorum veniam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ullam tempore a aut maxime adipisci illo dolorem? Laudantium consequatur suscipit a optio, facilis maiores esse.
-								hr.border-link
+				.game-card-grid
+					article.game-card-0.game-card
+						.card-container
+							.cards
+								.front
+									img.game-card-img.img-fluid(src='images/back.png' alt='')
+								.back
+									img#card0.game-card-img.img-fluid.deck(src='' alt='')
+					article.game-card-1.game-card
+						.card-container
+							.cards
+								.front
+									img.game-card-img.img-fluid(src='images/back.png' alt='')
+								.back
+									img#card1.game-card-img.img-fluid.deck(src='' alt='')
+					article.game-card-2.game-card
+						.card-container
+							.cards
+								.front
+									img.game-card-img.img-fluid(src='images/back.png' alt='')
+								.back
+									img#card2.game-card-img.img-fluid.deck(src='' alt='')
+					article.game-card-3.game-card
+						.card-container
+							.cards
+								.front
+									img.game-card-img.img-fluid(src='images/back.png' alt='')
+								.back
+									img#card3.game-card-img.img-fluid.deck(src='' alt='')
+					article.game-card-4.game-card
+						.card-container
+							.cards
+								.front
+									img.game-card-img.img-fluid(src='images/back.png' alt='')
+								.back
+									img#card4.game-card-img.img-fluid.deck(src='' alt='')
+				  
 		else
-			section#engagements.engagements.pt-5
-				h2.heading-secondary Le jeu qui vous ressemble
-				.container
-					.row
-						.col-md-6
-							#carouselExampleFade.carousel.slide.carousel-fade(data-ride='carousel')
-								.carousel-inner
-									.carousel-item.active
-										img.d-block.w-100(src='images/slide1.jpg' alt='First slide')
-									.carousel-item
-										img.d-block.w-100(src='images/slide2.jpg' alt='Second slide')
-									.carousel-item
-										img.d-block.w-100(src='images/slide3.jpg' alt='Third slide')
-						.col-md-2.px-4.mb-4
-							.view
-								i.fas.fa-laugh-beam.icons
-								p(style='color: white; text-align: justify')
-									| Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quod distinctio sed debitis aperiam natus necessitatibus doloremque dolor dolorum veniam, Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ullam tempore a aut maxime adipisci illo dolorem? Laudantium consequatur suscipit a optio, facilis maiores esse..
-								hr.border-link
-						.col-md-2.px-4.mb-4
-							.view
-								i.fas.fa-user-lock.icons
-								p(style='color: white; text-align: justify')
-									| Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quod distinctio sed debitis aperiam natus necessitatibus doloremque dolor dolorum veniam, Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ullam tempore a aut maxime adipisci illo dolorem? Laudantium consequatur suscipit a optio, facilis maiores esse..
-								hr.border-link
-						.col-md-2.px-4.mb-4
-							.view
-								i.fas.fa-gamepad.icons
-								p(style='color: white; text-align: justify')
-									| Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quod distinctio sed debitis aperiam natus necessitatibus doloremque dolor dolorum veniam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ullam tempore a aut maxime adipisci illo dolorem? Laudantium consequatur suscipit a optio, facilis maiores esse.
-								hr.border-link
+			section
+				.header-image
+
+		section#engagements.engagements.pt-5
+			h2.heading-secondary Le jeu qui vous ressemble
+			.container
+				.row
+					.col-md-6
+						#carouselExampleFade.carousel.slide.carousel-fade(data-ride='carousel')
+							.carousel-inner
+								.carousel-item.active
+									img.d-block.w-100(src='images/slide1.jpg' alt='First slide')
+								.carousel-item
+									img.d-block.w-100(src='images/slide2.jpg' alt='Second slide')
+								.carousel-item
+									img.d-block.w-100(src='images/slide3.jpg' alt='Third slide')
+					.col-md-2.px-4.mb-4
+						.view
+							i.fas.fa-laugh-beam.icons
+							p(style='color: white; text-align: justify')
+								| Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quod distinctio sed debitis aperiam natus necessitatibus doloremque dolor dolorum veniam, Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ullam tempore a aut maxime adipisci illo dolorem? Laudantium consequatur suscipit a optio, facilis maiores esse..
+							hr.border-link
+					.col-md-2.px-4.mb-4
+						.view
+							i.fas.fa-user-lock.icons
+							p(style='color: white; text-align: justify')
+								| Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quod distinctio sed debitis aperiam natus necessitatibus doloremque dolor dolorum veniam, Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ullam tempore a aut maxime adipisci illo dolorem? Laudantium consequatur suscipit a optio, facilis maiores esse..
+							hr.border-link
+					.col-md-2.px-4.mb-4
+						.view
+							i.fas.fa-gamepad.icons
+							p(style='color: white; text-align: justify')
+								| Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit quod distinctio sed debitis aperiam natus necessitatibus doloremque dolor dolorum veniam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis ullam tempore a aut maxime adipisci illo dolorem? Laudantium consequatur suscipit a optio, facilis maiores esse.
+							hr.border-link
+		
 		section#partners.partners
+			h2.heading-secondary-partners Nos partenaires
+			.container
+				.row
+					.col-md-4
+						img.w-100(src='images/aces-magazine.png' alt='First slide')
+					.col-md-4.partners-logo
+						img.w-100(src='images/chips-forum.png' alt='First slide')
+					.col-md-4.partners-logo
+						img.w-100(src='images/kawaii-game.png' alt='First slide')

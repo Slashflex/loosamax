@@ -1,31 +1,26 @@
 // Navbar
 nav.navigation.mb-1.navbar.navbar-expand-lg.navbar-dark.fixed-top
   a.navbar-brand(href='/') Loosamax
-  button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbarSupportedContent-4' aria-controls='navbarSupportedContent-4' aria-expanded='false' aria-label='Toggle navigation')
-    span.navbar-toggler-icon
-  #navbarSupportedContent-4.collapse.navbar-collapse
+  button.navbar-toggler.first-button(type='button' data-toggle='collapse' data-target='#navbarSupportedContent20' aria-controls='navbarSupportedContent20' aria-expanded='false' aria-label='Toggle navigation')
+    .animated-icon1
+      span
+      span
+      span
+  #navbarSupportedContent20.collapse.navbar-collapse
     ul.navbar-nav.ml-auto
       li.nav-item.active
-        a.nav-link(href='#play')
-          | Jouez
+        a.nav-link(href='/') Home
       li.nav-item
-        a.nav-link(href='#engagements')
-          | Nos engagements
-      li.nav-item
-        a.nav-link(href='#partners')
-          | Partenaires
-      li.nav-item.avatar.dropdown
-        a#navbarDropdownMenuLink-55.nav-link.dropdown-toggle(style="width: 20%; float: right" data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
-          if user
-            img.rounded-circle.z-depth-0(style="width: 30%" src=`images/users/${user.photo}` alt=`${user.name}`)
-          else
-            img.rounded-circle.z-depth-0(style="width: 30%" src='images/users/default.jpg' alt='default user photo')
-        .dropdown-menu.dropdown-menu-lg-right.dropdown-secondary(aria-labelledby='navbarDropdownMenuLink-55')
-          if user
-            a.dropdown-item(href='/profile') Profile
-            a.dropdown-item.logout Logout
-          else 
-            a.dropdown-item(href='/login') Login
-            a.dropdown-item(href='/signup') Signup
-            
+        a.nav-link(href='#') Pricing
+      if user
+        li.nav-item
+          a.nav-link(href='/profile') Profile
+        li.nav-item
+          a.nav-link.logout Logout
+      else
+        li.nav-item
+          a.nav-link(href='/login') Login
+        li.nav-item
+          a.nav-link(href='/signup') Signup
+
 // /.Navbar

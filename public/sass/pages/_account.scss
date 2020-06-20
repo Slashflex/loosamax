@@ -1,9 +1,8 @@
 .user-view {
   background-color: $color-white;
   max-width: 120rem;
-  margin: 0 auto;
-  min-height: 100vh;
-  border-radius: 3px;
+  margin: 15rem auto;
+  border-radius: .5rem;
   overflow: hidden;
   box-shadow: 0 2.5rem 8rem 2rem rgba($color-black, 0.07);
   display: flex;
@@ -12,31 +11,19 @@
     display: block;
   }
 
-  @include respond(phone) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-  }
-}
-
-.user-view__menu {
-  flex: 27rem 0 0;
-  background-image: linear-gradient(
-    to right bottom,
-    $color-primary-light,
-    $color-primary-dark
-  );
-  padding: 4rem 0;
-
-  @include respond(tab-port) {
-    padding: 2rem 0;
-  }
+  // @include respond(phone) {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   right: 0;
+  // }
 }
 
 .user-view__content {
   flex: 1;
   padding: 7rem 0;
+  display: flex;
+  align-items: center;
 }
 
 .user-view__form-container {

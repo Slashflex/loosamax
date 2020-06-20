@@ -25,13 +25,13 @@ import { isAFull } from "./isAFull.js";
 import { orderCards } from "./orderCards.js";
 import { CARDS } from "./utils.js";
 
+
 export const bestCombo = (cards, user) => {
   let hand = [];
   let highCards = orderCards(cards);
   let count = 0;
   let bool = true;
   let type = "";
-
   let cardsValue = highCards.map((card) => card.slice(0, card.length - 1));
 
   if (isAFull(highCards)) {
@@ -57,7 +57,7 @@ export const bestCombo = (cards, user) => {
         }
       }
     }
-
+    
     console.log(`${user} has a full: ${hand}`);
 
     return hand.slice(0, 5);

@@ -130,6 +130,11 @@
     -ms-flex-align: center;
     align-items: center;
     font-size: 1.6rem;
+
+    @include respond(phone) {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__user-photo {
@@ -200,4 +205,12 @@
   &:hover {
     color: $color-primary;
   }
+}
+
+.reward-form {
+  margin: -5rem auto;
+  max-width: 55rem;
+  padding: 5rem 7rem;
+  border-radius: 5px;
+  display: none;
 }
