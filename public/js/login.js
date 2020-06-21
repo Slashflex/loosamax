@@ -35,7 +35,7 @@ export const sendReward = async (email, product) => {
     });
 
     if (res.data.status === 'success') {
-      showAlert('success', 'An email has been sent to your inbox!');
+      showAlert('success', 'Your reward has been sent to your inbox!');
       window.setTimeout(() => {
         location.assign('/');
       }, 1500);
