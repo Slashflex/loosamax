@@ -19,7 +19,8 @@ const {
   resetPassword,
   protect,
   updatePassword,
-  restrictTo
+  restrictTo,
+  sendReward
 } = require('./../controllers/authController');
 
 const router = express.Router();
@@ -30,6 +31,7 @@ router.get('/logout', logout);
 
 router.post('/forgotPassword', forgotPassword);
 router.patch('/resetPassword/:token', resetPassword);
+router.post('/reward', sendReward);
 
 // Protect all routes after this middleware
 router.use(protect);

@@ -24,6 +24,28 @@ export const login = async (email, password) => {
   }
 };
 
+export const sendReward = async (email, product) => {
+  try {
+    const res = await axios({
+      method: 'POST',
+      url: '/api/v1/users/reward',
+      data: {
+        email
+      }
+    });
+
+    if (res.data.status === 'success') {
+      showAlert('success', 'An email has been sent to your inbox!');
+      window.setTimeout(() => {
+        location.assign('/');
+      }, 1500);
+    }
+  } catch (err) {
+    console.log(err)
+    showAlert('error', err.response.data.message);
+  }
+};
+
 export const logout = async () => {
   try {
     const res = await axios({

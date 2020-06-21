@@ -1,0 +1,11 @@
+extends baseEmail
+
+block content
+	p Hey #{firstName},
+	p #{subject} 🎉
+	p Here's your reward: #{meal}
+	img(src=`${mealImg}`, alt="")
+	p If you need any help, please don't hesitate to contact <a href="mailto:pro.davidsaoud@gmail.com">me</a>
+	p - Slashflex, CEO Loosamax
+	
+									

@@ -1,7 +1,7 @@
 /* eslint-disable */
 // import '@babel/polyfill';
 import { dealer } from './dealer.js';
-import { login, logout, signup, passwordForgot, passwordReset } from './login.js';
+import { login, logout, signup, passwordForgot, passwordReset, sendReward } from './login.js';
 import { updateSettings } from './updateSettings.js';
 import { showAlert } from './alerts.js';
 
@@ -13,6 +13,7 @@ const userPasswordForm = document.querySelector('.form-user-password');
 const signupForm = document.getElementById('signup-form');
 const passwordForgotForm = document.querySelector('#passwordForgotForm');
 const passwordResetForm = document.querySelector('#passwordResetForm');
+const rewardForm = document.querySelector('.form--reward');
 
 // On page Load
 window.addEventListener('load', () => {
@@ -20,25 +21,10 @@ window.addEventListener('load', () => {
   const playerImg = document.querySelectorAll('.test');
   const openNav = document.querySelector('.first-button');
   const addOpen = document.querySelector('.animated-icon1');
-  const navLink = document.querySelectorAll('.nav-item');
 
   openNav.addEventListener('click', (e) => {
     addOpen.classList.toggle('open');
   });
-
-  if (window.location.pathname == '/profile') {
-    // document.classList.remove('active');
-    navLink.siblings.
-    navLink[2].classList.add('active');
-  } else if (window.location.pathname == '/login') {
-    // document.classList.remove('active');
-    navLink[2].classList.add('active');
-  } else if (window.location.pathname == '/signup') {
-    // document.classList.remove('active');
-    navLink[3].classList.add('active');
-  } else {
-    navLink[0].classList.add('active');
-  }
 
   if (window.location.pathname == '/') {
     playerImg.forEach((e) => {
@@ -55,6 +41,13 @@ window.addEventListener('load', () => {
     });
   }
 });
+
+if (rewardForm)
+  document.querySelector('.form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    sendReward(email);
+  });
 
 if (loginForm)
   loginForm.addEventListener('submit', (e) => {

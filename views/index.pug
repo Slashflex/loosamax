@@ -30,9 +30,11 @@ block content
 					button.button.buttonPlay PLAY
 					span
 				
+				//- Test
 				.reward-form
 					h2.heading-secondary-partners.mt-0.u-center-text.ma-bt-lg 🎉 #{user.name} won 🎉!!
-					form.form.form--login
+					form.form.form--reward
+						input.form__input#email(type='hidden', value=`${user.email}`, required)
 						button.button-sign-up.button-reward(style='display: block; margin: 0 auto') Claim your reward
 
 				.game-card-grid

@@ -1,6 +1,7 @@
 const nodemailer = require('nodemailer');
 const pug = require('pug');
 const htmlToText = require('html-to-text');
+const axios = require('axios');
 
 module.exports = class Email {
   constructor(user, url, data) {
@@ -18,8 +19,8 @@ module.exports = class Email {
         service: 'SendGrid',
         auth: {
           user: process.env.SENDGRID_USERNAME,
-          pass: process.env.SENDGRID_PASSWORD
-        }
+          pass: process.env.SENDGRID_PASSWORD,
+        },
       });
     }
 
@@ -28,20 +29,30 @@ module.exports = class Email {
       port: process.env.EMAIL_PORT,
       auth: {
         user: process.env.EMAIL_USERNAME,
-        pass: process.env.EMAIL_PASSWORD
-      }
+        pass: process.env.EMAIL_PASSWORD,
+      },
       // Activate in gmail "less secure app" options
     });
   }
 
   async send(template, subject) {
+    const gift = await axios({
+      method: 'GET',
+      url: 'https://www.themealdb.com/api/json/v1/1/search.php?s=A',
+      data: {},
+    });
+    const rand = Math.floor(Math.random() * 25);
+    const meal = [gift.data.meals[rand].strMeal, gift.data.meals[rand].strMealThumb];
+
     // Send the actual email
     // 1. Render the html based on a pug template
     const html = pug.renderFile(`${__dirname}/../views/email/${template}.pug`, {
       firstName: this.firstName,
       url: this.url,
       data: this.data,
-      subject
+      subject,
+      meal: meal[0],
+      mealImg: meal[1],
     });
 
     // 2. Define email options
@@ -50,7 +61,7 @@ module.exports = class Email {
       to: this.to,
       subject,
       html,
-      text: htmlToText.fromString(html)
+      text: htmlToText.fromString(html),
     };
 
     // 3. Create a transport and send email
