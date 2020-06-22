@@ -24,7 +24,7 @@ export const login = async (email, password) => {
   }
 };
 
-export const sendReward = async (email, product) => {
+export const sendReward = async (email) => {
   try {
     const res = await axios({
       method: 'POST',
